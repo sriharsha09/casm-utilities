@@ -1,6 +1,7 @@
 dist_bin_SCRIPTS+=utilities/casmutils
 
 include utilities/primify/Makemodule.am
+include utilities/cluster_convertor/Makemodule.am
 include utilities/super_structure/Makemodule.am
 include utilities/apply_strain/Makemodule.am
 include utilities/frankenslice/Makemodule.am

@@ -1,0 +1,11 @@
+bin_PROGRAMS += _casmutils-cluster-convertor
+
+_casmutils_cluster_convertor_SOURCES=\
+						  utilities/cluster_convertor/cluster_convertor.cpp
+
+
+_casmutils_cluster_convertor_LDADD=\
+						libcasmutils.la\
+						$(BOOST_SYSTEM_LIB)\
+						$(BOOST_FILESYSTEM_LIB)\
+						$(BOOST_PROGRAM_OPTIONS_LIB)
