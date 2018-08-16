@@ -54,6 +54,13 @@ int main(int argc, char* argv[])
         return 2;
     }
 
+
+    CASM::fs::path prim_path("files/prim.json");
+    CASM::fs::path bspecs_path("files/bspecs.json");
+    CASM::fs::path clust_path("files/clust.json");
+    Simplicity::clust_convertor(prim_path, bspecs_path, clust_path);
+
+        
     // auto struc_path = clusterconv_launch.fetch<fs::path>("structure");
     // auto strain_path = clusterconv_launch.fetch<fs::path>("tensor");
     // auto mode = clusterconv_launch.fetch<std::string>("mode");
