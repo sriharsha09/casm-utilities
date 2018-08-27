@@ -3,6 +3,7 @@
 #include "casmutils/handlers.hpp"
 #include "casmutils/structure.hpp"
 #include <boost/program_options.hpp>
+#include <boost/filesystem/fstream.hpp>
 #include <casm/crystallography/Structure.hh>
 #include <fstream>
 #include <iostream>
