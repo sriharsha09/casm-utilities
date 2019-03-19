@@ -1,8 +1,8 @@
 #include "casmutils/definitions.hpp"
 #include "casmutils/exceptions.hpp"
 #include "casmutils/handlers.hpp"
-#include "casmutils/structure.hpp"
 #include "casmutils/stage.hpp"
+#include "casmutils/structure.hpp"
 #include <boost/program_options.hpp>
 #include <casm/crystallography/Structure.hh>
 #include <fstream>
@@ -54,18 +54,35 @@ int main(int argc, char* argv[])
         return 2;
     }
 
+    Rewrap::fs::path prim_path("files/prim.json");
+    Rewrap::fs::path bspecs_path("files/bspecs.json");
+    Rewrap::fs::path clust_path("files/clust.json");
 
-    CASM::fs::path prim_path("files/prim.json");
-    CASM::fs::path bspecs_path("files/bspecs.json");
-    CASM::fs::path clust_path("files/clust.json");
-    Simplicity::clust_convertor(prim_path, bspecs_path, clust_path);
+    auto prim = Simplicity::read_prim(prim_path);
+    // auto orbits = Simplicity::make_prim_periodic_orbits(prim, bspecs_path);
+    // auto integral_clusters = Legacy::get_integral_clusters_from_clust(prim, clust_path);
 
-        
+    // auto cluster_map = Simplicity::cluster_finder(integral_clusters, orbits);
+    // std::cout << std::setw(4) << "old" << " ---->"
+    //           << std::setw(4) << "new" << "\n";
+    // for (const auto& index_pair : cluster_map)
+    // {
+    //     if (index_pair.second != -1)
+    //     {
+    //         std::cout << std::setw(4) << index_pair.first << " ---->"
+    //                   << std::setw(4) << index_pair.second << "\n";
+    //     }
+    //     else
+    //     {
+    //         std::cout << std::setw(4) << index_pair.first << " ---->"
+    //                   << std::setw(4) << "N/A" << "\n";
+    //     }
+    // }
+
     // auto struc_path = clusterconv_launch.fetch<fs::path>("structure");
     // auto strain_path = clusterconv_launch.fetch<fs::path>("tensor");
     // auto mode = clusterconv_launch.fetch<std::string>("mode");
     // Rewrap::Structure strained_struc(struc_path);
-
 
     // checks the output type and writes the strained structure to a output stream
     // if (clusterconv_launch.vm().count("output"))
